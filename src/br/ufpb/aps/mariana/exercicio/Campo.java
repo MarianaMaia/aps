@@ -1,8 +1,5 @@
 package br.ufpb.aps.mariana.exercicio;
 
-
-import javax.swing.JOptionPane;
-
 public class Campo {
 	
 	private Validador validador;
@@ -105,17 +102,11 @@ public class Campo {
 
 
 
-	public boolean validar(){
-		try{
-			this.validador.validar(valor);	
-			return true;
-		}catch(ValorInvalidoException e){
-			this.erro = e.getMessage();
-			JOptionPane.showMessageDialog(null,e.getMessage());
-			return false;
-		}
-	}
-	
+	public void validar() throws ValorInvalidoException{
+		
+		this.validador.validar(valor);	
+
+}
 	public String getErro(){
 		return this.erro;
 	}
